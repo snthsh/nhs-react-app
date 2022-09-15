@@ -11,7 +11,7 @@ const PageThree = ({ pageData }) => {
           </tr>
         );
       }
-      return <></>;
+      return null;
     });
   }
 
