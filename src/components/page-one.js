@@ -8,7 +8,7 @@ const PageOne = ({ onClick, onChange, pageData }) => {
       <div className="container">
         <form className="row g-3">
           <div className="col-md-6">
-            <label for="firstName" className="form-label">
+            <label htmlFor="firstName" className="form-label">
               First name
             </label>
             <input
@@ -22,7 +22,7 @@ const PageOne = ({ onClick, onChange, pageData }) => {
             />
           </div>
           <div className="col-md-6">
-            <label for="lastName" className="form-label">
+            <label htmlFor="lastName" className="form-label">
               Last name
             </label>
             <input
@@ -36,7 +36,7 @@ const PageOne = ({ onClick, onChange, pageData }) => {
             />
           </div>
           <div className="col-md-6">
-            <label for="applicationDate" className="form-label">
+            <label htmlFor="applicationDate" className="form-label">
               Application Date:
             </label>
             <input
@@ -50,7 +50,7 @@ const PageOne = ({ onClick, onChange, pageData }) => {
           </div>
 
           <div className="col-md-6">
-            <label for="country" className="form-label">
+            <label htmlFor="country" className="form-label">
               Country:
             </label>
             <select
