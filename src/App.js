@@ -73,7 +73,7 @@ function App() {
               The development will be on 3-page applications. Master page will
               contain a design
             </p>
-            <Button onClick={handleClick}>PageOne</Button>
+            <Button onClick={handleClick}>Page 1</Button>
           </>
         )}
 
