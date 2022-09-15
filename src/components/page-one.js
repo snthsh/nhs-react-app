@@ -1,74 +1,77 @@
 import { Button } from 'react-bootstrap';
+import COUNTRIES from '../data.json';
 
 const PageOne = ({ onClick, onChange, pageData }) => {
-  const date = new Date();
   return (
     <>
-      <h1>PageOne</h1>
+      <h1>Page 1</h1>
       <div className="container">
-        <form>
-          <div className="row">
-            <div className="col">
-              <label htmlFor="firstName">
-                First Name:
-                <input
-                  name="firstName"
-                  type="text"
-                  value={pageData.firstName}
-                  onChange={(e) => onChange(e)}
-                />
-              </label>
-            </div>
+        <form className="row g-3">
+          <div className="col-md-6">
+            <label for="firstName" className="form-label">
+              First name
+            </label>
+            <input
+              className="form-control"
+              placeholder="First name"
+              aria-label="First name"
+              name="firstName"
+              type="text"
+              value={pageData.firstName}
+              onChange={onChange}
+            />
           </div>
-          <div className="row">
-            <div className="col">
-              <label htmlFor="lastName">
-                Last Name:
-                <input
-                  name="lastName"
-                  type="text"
-                  value={pageData.lastName}
-                  onChange={(e) => onChange(e)}
-                />
-              </label>
-            </div>
+          <div className="col-md-6">
+            <label for="lastName" className="form-label">
+              Last name
+            </label>
+            <input
+              className="form-control"
+              placeholder="Last name"
+              aria-label="Last name"
+              name="lastName"
+              type="text"
+              value={pageData.lastName}
+              onChange={onChange}
+            />
           </div>
-          <div className="row">
-            <div className="col">
-              <label htmlFor="applicationDate">
-                Application Date:
-                <input
-                  name="applicationDate"
-                  type="date"
-                  value={pageData.applicationDate}
-                  onChange={(e) => onChange(e)}
-                />
-              </label>
-            </div>
+          <div className="col-md-6">
+            <label for="applicationDate" className="form-label">
+              Application Date:
+            </label>
+            <input
+              className="form-control"
+              aria-label="Application Date"
+              name="applicationDate"
+              type="date"
+              value={pageData.applicationDate}
+              onChange={onChange}
+            />
           </div>
-          <div className="row">
-            <div className="col">
-              <label htmlFor="country">
-                Country:
-                <select
-                  name="country"
-                  value={pageData.country}
-                  onChange={(e) => onChange(e)}
-                >
-                  <option value="">Select a country</option>
-                  <option value="india">India</option>
-                  <option value="uk">UK</option>
-                  <option value="usa">USA</option>
-                  <option value="france">France</option>
-                  <option value="germany">germany</option>
-                </select>
-              </label>
-            </div>
+
+          <div className="col-md-6">
+            <label for="country" className="form-label">
+              Country:
+            </label>
+            <select
+              className="form-select"
+              aria-label="Country"
+              name="country"
+              value={pageData.country}
+              onChange={onChange}
+            >
+              <option value="">Select a country</option>
+              {COUNTRIES.map((country) => {
+                return (
+                  <option key={country.name} value={country.name}>
+                    {country.text}
+                  </option>
+                );
+              })}
+            </select>
           </div>
-          <div className="row">
-            <div className="col">
-              <Button onClick={() => onClick()}>Save and Proceed</Button>
-            </div>
+          <div className="col">
+            <Button onClick={onClick}>Save and Proceed</Button>
           </div>
         </form>
       </div>

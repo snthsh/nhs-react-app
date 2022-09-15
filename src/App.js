@@ -23,7 +23,6 @@ function App() {
   }
 
   function handlePageOneSave() {
-    console.log('here page two');
     setPage('PAGETWO');
   }
 
@@ -60,37 +59,36 @@ function App() {
   }
 
   function handlePageTwoSave() {
-    console.log('here page three');
     setPage('PAGETHREE');
   }
 
   return (
-    <Container>
-      <h1 className="text-center">NHS React App</h1>
+    <main>
+      <Container>
+        <h1 className="text-center">NHS React App</h1>
 
-      {page === 'HOME' && (
-        <Button onClick={() => handleClick()}>PageOne</Button>
-      )}
+        {page === 'HOME' && <Button onClick={handleClick}>PageOne</Button>}
 
-      {page === 'PAGEONE' && (
-        <PageOne
-          onClick={handlePageOneSave}
-          onChange={handleInputChange}
-          pageData={pageData}
-        />
-      )}
+        {page === 'PAGEONE' && (
+          <PageOne
+            onClick={handlePageOneSave}
+            onChange={handleInputChange}
+            pageData={pageData}
+          />
+        )}
 
-      {page === 'PAGETWO' && (
-        <PageTwo
-          onClick={handlePageTwoSave}
-          onChange={handleOnChange}
-          onSelect={handleOnSelect}
-          pageData={pageData}
-        />
-      )}
+        {page === 'PAGETWO' && (
+          <PageTwo
+            onClick={handlePageTwoSave}
+            onChange={handleOnChange}
+            onSelect={handleOnSelect}
+            pageData={pageData}
+          />
+        )}
 
-      {page === 'PAGETHREE' && <PageThree pageData={pageData} />}
-    </Container>
+        {page === 'PAGETHREE' && <PageThree pageData={pageData} />}
+      </Container>
+    </main>
   );
 }
 

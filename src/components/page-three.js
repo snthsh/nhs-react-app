@@ -16,7 +16,7 @@ const PageThree = ({ pageData }) => {
 
   return (
     <>
-      <h1>PageThree</h1>
+      <h1>Page 3</h1>
       <table className="table">
         <thead>
           <tr>
