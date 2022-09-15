@@ -1,4 +1,5 @@
 import { Button } from 'react-bootstrap';
+import COUNTRIES from '../data.json';
 
 const PageTwo = ({ onClick, onChange, onSelect, pageData }) => {
   function renderRow(country, index) {
@@ -8,20 +9,26 @@ const PageTwo = ({ onClick, onChange, onSelect, pageData }) => {
         <td>{serialNo}</td>
         <td>
           <select
+            className="form-select"
+            aria-label={`Country ${serialNo}`}
             name={`country${serialNo}`}
             value={pageData.countries[index]}
             onChange={(e) => onSelect(e, index)}
           >
             <option value="">Select a country</option>
-            <option value="india">India</option>
-            <option value="uk">UK</option>
-            <option value="usa">USA</option>
-            <option value="france">France</option>
-            <option value="germany">Germany</option>
+            {COUNTRIES.map((country) => {
+              return (
+                <option key={country.name} value={country.name}>
+                  {country.text}
+                </option>
+              );
+            })}
           </select>
         </td>
         <td>
           <input
+            className="form-check-input"
+            aria-label={`Country Checkbox ${serialNo}`}
             type="checkbox"
             name={`countryCheckbox${serialNo}`}
             checked={pageData.countryCheckboxes[index]}
@@ -34,7 +41,7 @@ const PageTwo = ({ onClick, onChange, onSelect, pageData }) => {
 
   return (
     <>
-      <h1>PageTwo</h1>
+      <h1>Page 2</h1>
       <h2>Hi {`${pageData.firstName} ${pageData.lastName}`}</h2>
 
       <table className="table">
@@ -52,7 +59,7 @@ const PageTwo = ({ onClick, onChange, onSelect, pageData }) => {
             })}
         </tbody>
       </table>
-      <Button onClick={() => onClick()}>Save and Proceed</Button>
+      <Button onClick={onClick}>Save and Proceed</Button>
     </>
   );
 };

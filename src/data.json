@@ -1,0 +1,12 @@
+[
+  { "name": "india", "text": "India" },
+  { "name": "united-kingdom", "text": "United Kingdom" },
+  { "name": "canada", "text": "Canada" },
+  { "name": "usa", "text": "USA" },
+  { "name": "france", "text": "France" },
+  { "name": "germany", "text": "Germany" },
+  { "name": "singapore", "text": "Singapore" },
+  { "name": "thailand", "text": "Thailand" },
+  { "name": "malaysia", "text": "Malaysia" },
+  { "name": "south-korea", "text": "South Korea" }
+]
