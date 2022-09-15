@@ -67,7 +67,15 @@ function App() {
       <Container>
         <h1 className="text-center">NHS React App</h1>
 
-        {page === 'HOME' && <Button onClick={handleClick}>PageOne</Button>}
+        {page === 'HOME' && (
+          <>
+            <p>
+              The development will be on 3-page applications. Master page will
+              contain a design
+            </p>
+            <Button onClick={handleClick}>PageOne</Button>
+          </>
+        )}
 
         {page === 'PAGEONE' && (
           <PageOne
